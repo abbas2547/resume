@@ -49,27 +49,31 @@ export default function Navbar() {
           {/* Navigation Links */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
-              <motion.button
+              <motion.div
                 key={item.id}
-                onClick={() => handleNavClick(item.id)}
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-slate-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200"
               >
-                {item.label}
-              </motion.button>
+                <button
+                  onClick={() => handleNavClick(item.id)}
+                  className="text-slate-600 hover:text-blue-600 text-sm font-medium transition-colors duration-200"
+                >
+                  {item.label}
+                </button>
+              </motion.div>
             ))}
           </div>
 
           {/* Download PDF Button */}
-          <motion.button
+          <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-lg font-medium text-sm hover:bg-blue-50 transition-colors duration-200"
           >
-            Download PDF
-          </motion.button>
+            <button className="px-6 py-2 border-2 border-blue-600 text-blue-600 rounded-lg font-medium text-sm hover:bg-blue-50 transition-colors duration-200">
+              Download PDF
+            </button>
+          </motion.div>
         </div>
       </nav>
     </motion.div>
