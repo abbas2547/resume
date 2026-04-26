@@ -1,40 +1,85 @@
-// @ts-nocheck
-"use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
 
 export default function About() {
-  const aboutText = `I’m a Full Stack Web Developer with 2+ years of experience delivering production-ready web applications. I build performant and accessible frontends with Next.js and robust backends using Laravel. My work focuses on clean UI, scalable architecture, and shipping features that solve real user problems. I’ve contributed to SaaS dashboards and e-commerce platforms, and I enjoy owning projects end-to-end—from design and implementation to deployment and monitoring.`;
-
   return (
-    <section id="about" className="w-full py-20 px-6">
-      <motion.div className="max-w-[1000px] mx-auto grid md:grid-cols-2 gap-8 items-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-        <div>
-          <h3 className="text-2xl font-semibold mb-4">My Story</h3>
-          <p className="text-[var(--text-secondary)] mb-6">{aboutText}</p>
+    <section id="about" className="w-full py-20 px-6 bg-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12">
+          {/* Left Column */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="mb-8 pb-8 border-l-4 border-blue-600 pl-6">
+              <p className="text-sm font-bold text-blue-600 uppercase tracking-widest mb-2">
+                MY STORY
+              </p>
+              <h2 className="font-serif text-5xl font-bold text-slate-900">
+                Turning Ideas into Impactful <span className="text-blue-600">Web Solutions</span>
+              </h2>
+            </div>
 
-          <div className="grid grid-cols-3 gap-4">
-            <div className="glass p-4 rounded-xl text-center">
-              <div className="text-2xl font-bold">2+</div>
-              <div className="text-[var(--text-secondary)] text-sm">Years Experience</div>
+            {/* Stats */}
+            <div className="grid grid-cols-3 gap-4">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <div className="text-2xl mb-1">📅</div>
+                  <p className="font-semibold text-slate-900">2+</p>
+                  <p className="text-sm text-slate-600">Years Experience</p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <div className="text-2xl mb-1">💻</div>
+                  <p className="font-semibold text-slate-900">Full Stack</p>
+                  <p className="text-sm text-slate-600">Frontend & Backend</p>
+                </div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.3 }}
+              >
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <div className="text-2xl mb-1">🚀</div>
+                  <p className="font-semibold text-slate-900">End-to-End</p>
+                  <p className="text-sm text-slate-600">Design → Deploy</p>
+                </div>
+              </motion.div>
             </div>
-            <div className="glass p-4 rounded-xl text-center">
-              <div className="text-2xl font-bold">Full Stack</div>
-              <div className="text-[var(--text-secondary)] text-sm">Frontend & Backend</div>
-            </div>
-            <div className="glass p-4 rounded-xl text-center">
-              <div className="text-2xl font-bold">End-to-End</div>
-              <div className="text-[var(--text-secondary)] text-sm">Design → Deploy</div>
-            </div>
-          </div>
-        </div>
+          </motion.div>
 
-        <div className="hidden md:flex items-center justify-center">
-          <div className="w-56 h-56 rounded-2xl overflow-hidden shadow-sm">
-            <Image src="/p.jpeg" alt="About image" width={224} height={224} className="object-cover w-full h-full" />
-          </div>
+          {/* Right Column */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <p className="text-lg text-slate-700 leading-relaxed mb-6">
+              I&apos;m a dedicated and motivated web developer with over two years of hands-on experience in building modern web applications. I have built a strong foundation in core technologies such as HTML, CSS, and JavaScript, and gained hands-on experience with modern frameworks like Next.js and Laravel.
+            </p>
+            <p className="text-lg text-slate-700 leading-relaxed">
+              I specialize in creating responsive and user-friendly web applications. I enjoy building seamless user experiences and focus on writing clean code. I&apos;m always learning, always building, and always striving to grow as a software engineer.
+            </p>
+          </motion.div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

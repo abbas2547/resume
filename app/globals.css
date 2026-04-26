@@ -2,38 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-main: #f8fafc;
-  --bg-secondary: #ffffff;
-  --panel: #ffffff;
-  --primary: #2563eb;
-  --accent-start: #2563eb;
-  --accent-end: #60a5fa;
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --glass: rgba(255,255,255,0.7);
-  --glass-border: rgba(2,6,23,0.04);
+@theme inline {
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --color-background: #ffffff;
+  --color-surface: #f8fafc;
+  --color-primary: #1d4ed8;
+  --color-text: #0f172a;
+  --color-text-muted: #64748b;
 }
 
-html, body, #root { height: 100%; scroll-behavior: smooth; }
+html, body {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--bg-main);
-  color: var(--text-primary);
-  font-family: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background-color: #ffffff;
+  color: #0f172a;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Light glassmorphism */
-.glass {
-  background: linear-gradient(135deg, rgba(255,255,255,0.92), rgba(255,255,255,0.78));
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 10px 30px rgba(2,6,23,0.04);
-  backdrop-filter: blur(6px) saturate(120%);
+/* Serif headings */
+.font-serif {
+  font-family: var(--font-serif);
 }
 
-.accent-gradient { background: linear-gradient(90deg, var(--accent-start), var(--accent-end)); }
-.glow { box-shadow: 0 8px 30px rgba(37,99,235,0.08); }
+.font-sans {
+  font-family: var(--font-sans);
+}
 
-.h1 { font-family: var(--font-inter); }
-.kicker { color: var(--text-secondary); }
+/* Background image overlay */
+.bg-image-overlay {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(248, 250, 252, 0.93)), 
+              url('https://images.unsplash.com/photo-1650969553467-99e381c4097f?q=80&w=1920&auto=format&fit=crop') center/cover;
+  background-attachment: fixed;
+}
+
+/* Elegant card styling */
+.card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Subtle animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Progress bar */
+.progress-bar {
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+  height: 3px;
+  border-radius: 2px;
+  transition: width 0.6s ease-out;
+}
