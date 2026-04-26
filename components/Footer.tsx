@@ -27,14 +27,15 @@ export default function Footer() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex items-center gap-8 text-sm"
           >
-            <button
-              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-              className="text-slate-600 hover:text-blue-600 transition-colors font-medium"
-            >
-              Back to Top
-            </button>
+            <div className="flex items-center gap-8 text-sm">
+              <button
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                className="text-slate-600 hover:text-blue-600 transition-colors font-medium"
+              >
+                Back to Top
+              </button>
+            </div>
           </motion.div>
         </div>
 
