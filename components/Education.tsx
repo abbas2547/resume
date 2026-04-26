@@ -63,24 +63,25 @@ export default function Education() {
           >
             <span className="font-serif text-5xl md:text-6xl font-bold text-slate-900">Education</span>
           </motion.h2>
-          <motion.div
-            initial={{ scaleX: 0 }}
-            whileInView={{ scaleX: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            style={{ transformOrigin: 'left' }}
-            className="w-20 h-1 bg-blue-600 rounded-full mt-4"
-          />
+          <div className="w-20 h-1 bg-blue-600 rounded-full mt-4 overflow-hidden">
+            <motion.div
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              style={{ transformOrigin: 'left', height: '100%' }}
+            />
+          </div>
         </div>
 
         {/* Education Items */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <div className="space-y-8">
+        <div className="space-y-8">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
             {educationData.map((edu) => (
               <motion.div
                 key={edu.id}
@@ -115,17 +116,17 @@ export default function Education() {
                 </div>
               </motion.div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
 
         {/* Certifications */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.6 }}
-        >
-          <div className="mt-16 p-8 bg-slate-50 rounded-lg border border-slate-200">
+        <div className="mt-16 p-8 bg-slate-50 rounded-lg border border-slate-200">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+          >
             <h3 className="font-serif text-2xl font-bold text-slate-900 mb-6">
               Certifications
             </h3>
@@ -147,8 +148,8 @@ export default function Education() {
                 </div>
               ))}
             </div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
