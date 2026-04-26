@@ -30,33 +30,36 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.1 }}
-                className="p-4 bg-slate-50 rounded-lg"
               >
-                <div className="text-2xl mb-1">📅</div>
-                <p className="font-semibold text-slate-900">2+</p>
-                <p className="text-sm text-slate-600">Years Experience</p>
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <div className="text-2xl mb-1">📅</div>
+                  <p className="font-semibold text-slate-900">2+</p>
+                  <p className="text-sm text-slate-600">Years Experience</p>
+                </div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.2 }}
-                className="p-4 bg-slate-50 rounded-lg"
               >
-                <div className="text-2xl mb-1">💻</div>
-                <p className="font-semibold text-slate-900">Full Stack</p>
-                <p className="text-sm text-slate-600">Frontend & Backend</p>
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <div className="text-2xl mb-1">💻</div>
+                  <p className="font-semibold text-slate-900">Full Stack</p>
+                  <p className="text-sm text-slate-600">Frontend & Backend</p>
+                </div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.3 }}
-                className="p-4 bg-slate-50 rounded-lg"
               >
-                <div className="text-2xl mb-1">🚀</div>
-                <p className="font-semibold text-slate-900">End-to-End</p>
-                <p className="text-sm text-slate-600">Design → Deploy</p>
+                <div className="p-4 bg-slate-50 rounded-lg">
+                  <div className="text-2xl mb-1">🚀</div>
+                  <p className="font-semibold text-slate-900">End-to-End</p>
+                  <p className="text-sm text-slate-600">Design → Deploy</p>
+                </div>
               </motion.div>
             </div>
           </motion.div>
