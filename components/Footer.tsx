@@ -8,36 +8,49 @@ export default function Footer() {
   return (
     <footer className="w-full py-12 px-6 border-t border-slate-200 bg-white">
       <div className="max-w-6xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex flex-col md:flex-row items-center justify-between"
-        >
-          {/* Copyright */}
-          <div className="text-slate-600 text-sm mb-6 md:mb-0">
-            © {currentYear} Abbas Raza. All rights reserved.
-          </div>
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            {/* Copyright */}
+            <div className="text-slate-600 text-sm mb-6 md:mb-0">
+              © {currentYear} Abbas Raza. All rights reserved.
+            </div>
+          </motion.div>
 
           {/* Links */}
-          <div className="flex items-center gap-8 text-sm">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="flex items-center gap-8 text-sm"
+          >
+            <button
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="text-slate-600 hover:text-blue-600 transition-colors font-medium"
             >
               Back to Top
-            </motion.button>
-          </div>
-        </motion.div>
+            </button>
+          </motion.div>
+        </div>
 
         {/* Divider */}
-        <div className="mt-8 pt-8 border-t border-slate-100">
-          <p className="text-center text-xs text-slate-500">
-            Crafted with care using Next.js, React, and Framer Motion.
-          </p>
-        </div>
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <div className="mt-8 pt-8 border-t border-slate-100">
+            <p className="text-center text-xs text-slate-500">
+              Crafted with care using Next.js, React, and Framer Motion.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </footer>
   );
