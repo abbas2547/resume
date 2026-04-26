@@ -54,18 +54,16 @@ export default function Education() {
     <section id="education" className="w-full py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-serif text-5xl md:text-6xl font-bold text-slate-900 mb-4"
-          >
+          <h2 className="font-serif text-5xl md:text-6xl font-bold text-slate-900 mb-4">
             Education
-          </motion.h2>
+          </h2>
           <motion.div
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
@@ -73,7 +71,7 @@ export default function Education() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="w-20 h-1 bg-blue-600 rounded-full origin-left"
           />
-        </div>
+        </motion.div>
 
         {/* Education Items */}
         <motion.div
