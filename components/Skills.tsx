@@ -2,8 +2,18 @@
 
 import { motion } from 'framer-motion';
 
+interface Skill {
+  name: string;
+  level: number;
+}
+
+interface SkillCategory {
+  category: string;
+  skills: Skill[];
+}
+
 // Update this with your actual skills
-const skillCategories = [
+const skillCategories: SkillCategory[] = [
   {
     category: 'Frontend',
     skills: [],
