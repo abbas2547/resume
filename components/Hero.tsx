@@ -1,32 +1,111 @@
 // @ts-nocheck
-"use client";
-import { motion } from "framer-motion";
-import Image from "next/image";
+'use client';
+
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section id="hero" className="w-full py-20 px-6">
-      <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-8 items-center">
-        <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }}>
-          <h1 className="text-4xl md:text-5xl font-semibold mb-3 text-[var(--text-primary)]">Hi, I'm Abbas Raza</h1>
-          <h2 className="text-lg font-medium text-[var(--text-secondary)] mb-4">Full Stack Web Developer</h2>
-          <p className="text-[var(--text-secondary)] mb-6 max-w-lg">I build modern, accessible, and performant web applications using Next.js for frontend and Laravel for backend. I focus on clean UI, scalable architecture, and shipping production-ready features.</p>
+    <section className="min-h-screen w-full pt-32 pb-20 px-6 bg-image-overlay flex items-center">
+      <div className="max-w-6xl mx-auto w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
+          className="max-w-3xl"
+        >
+          {/* Subtitle */}
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.6 }}
+            className="text-sm font-medium text-blue-600 mb-6 uppercase tracking-widest"
+          >
+            Welcome to my resume
+          </motion.p>
 
-          <div className="flex gap-3 mb-6 flex-wrap">
-            <a href="mailto:abbaszaidi028@gmail.com" className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-[var(--text-primary)] shadow-sm">abbaszaidi028@gmail.com</a>
-            <a href="tel:8755621235" className="px-4 py-2 rounded-lg border border-gray-200 bg-white text-[var(--text-primary)] shadow-sm">8755621235</a>
-          </div>
+          {/* Main Heading */}
+          <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl font-bold text-slate-900 mb-6 leading-tight text-balance">
+            Abbas Raza.
+          </h1>
 
-          <div className="flex items-center gap-4">
-            <motion.a whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} href="#projects" className="px-5 py-3 rounded-full text-white bg-[var(--primary)] shadow-sm">View My Work</motion.a>
-            <motion.a whileHover={{ scale: 1.03 }} transition={{ duration: 0.2 }} href="/resume.pdf" className="px-5 py-3 rounded-full border border-gray-200 text-[var(--primary)] bg-white">Download Resume</motion.a>
-          </div>
+          {/* Subheading */}
+          <h2 className="font-sans text-2xl md:text-3xl font-light text-slate-600 mb-8 text-balance">
+            Full-Stack Developer | Next.js & Laravel Specialist
+          </h2>
+
+          {/* Professional Summary */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.6 }}
+            className="font-sans text-lg text-slate-700 leading-relaxed mb-12 max-w-2xl text-balance"
+          >
+            I craft elegant, high-performance web applications with modern technologies. Specializing in Next.js and Laravel, I build scalable solutions that combine beautiful user experiences with robust backend architecture.
+          </motion.p>
+
+          {/* Contact Information */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            className="flex flex-col sm:flex-row gap-8 mb-12"
+          >
+            <div>
+              <p className="text-xs uppercase tracking-widest text-slate-500 mb-2">Email</p>
+              <a
+                href="mailto:abbaszaidi028@gmail.com"
+                className="text-lg text-blue-600 hover:text-blue-700 font-medium transition-colors"
+              >
+                abbaszaidi028@gmail.com
+              </a>
+            </div>
+            <div>
+              <p className="text-xs uppercase tracking-widest text-slate-500 mb-2">Phone</p>
+              <a
+                href="tel:+918755621235"
+                className="text-lg text-blue-600 hover:text-blue-700 font-medium transition-colors"
+              >
+                +91 8755621235
+              </a>
+            </div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.8, duration: 0.6 }}
+            className="flex flex-wrap gap-4"
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const element = document.getElementById('experience');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="px-8 py-3 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors shadow-lg"
+            >
+              View My Work
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-8 py-3 border-2 border-blue-600 text-blue-600 font-medium rounded-lg hover:bg-blue-50 transition-colors"
+            >
+              Download Resume
+            </motion.button>
+          </motion.div>
         </motion.div>
 
-        <motion.div className="flex items-center justify-center" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }}>
-          <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-lg">
-            <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-[rgba(37,99,235,0.12)] to-[rgba(100,116,139,0.06)] blur-3xl -z-10" />
-            <Image src="/p.jpeg" alt="Abbas Raza" width={288} height={288} className="object-cover w-full h-full relative z-10" />
+        {/* Scroll Indicator */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        >
+          <div className="w-6 h-10 border-2 border-slate-400 rounded-full flex items-center justify-center">
+            <div className="w-1 h-2 bg-slate-400 rounded-full" />
           </div>
         </motion.div>
       </div>
