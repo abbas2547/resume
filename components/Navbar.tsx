@@ -4,9 +4,10 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 const navItems = [
-  { label: 'Experience', id: 'experience' },
+  { label: 'Home', id: 'hero' },
+  { label: 'About', id: 'about' },
   { label: 'Skills', id: 'skills' },
-  { label: 'Education', id: 'education' },
+  { label: 'Projects', id: 'projects' },
   { label: 'Contact', id: 'contact' },
 ];
 
